@@ -2,10 +2,16 @@
   position: relative;
   max-width: 1140px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .bgc {
   background: #FEFCF9;
+}
+
+.aboutContainer {
+  background: url(../../assets//about_cover.png) no-repeat top center;
+  background-size: contain; 
 }
 
 .aboutCover {
@@ -16,7 +22,7 @@
 .introduction {
   width: 100%;
   text-align: center;
-  margin: -207px 0 60px;
+  margin: 393px 0 60px;
   padding: 25px 0 50px 0;
   background: #FEFCF9;
   border-radius: 20px;
@@ -35,6 +41,12 @@
     line-height: 28px;
     font-weight: bold;
     text-align: justify;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .introduction {
+    margin-top: 200px;
   }
 }
 
@@ -111,21 +123,20 @@
 }
 
 .contact {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url('../../assets//about_contact.png') no-repeat top center;
+  background-size: cover;
+  height: 200px;
+  line-height: 200px;
 
-  .contactAddress {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    p {
-      font-size: 18px;
-      color: #2B292D;
-      letter-spacing: 0;
-      text-align: center;
-      line-height: 28px;
-      font-weight: bold;
-    }
+  p {
+    font-size: 18px;
+    color: #2B292D;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 28px;
+    font-weight: bold;
   }
 }

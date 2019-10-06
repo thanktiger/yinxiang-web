@@ -1,35 +1,157 @@
-import styles from './index.less';
+import React, { Component } from 'react'
+import Link from 'umi/link'
+import { Icon } from 'antd'
+import styles from './index.less'
 import logo from '../assets/logo.png'
+import qrcode from '../assets/qrcode.png'
 
 const navList = [
-  '关于银象',
-  '新闻动态',
-  '主营业务',
-  '项目案例',
-  '党建活动',
-  '加入我们',
+  {
+    name: '关于银象',
+    url: './',
+    subNavList: [
+      {
+        name: '公司概述',
+        url: './'
+      },
+      {
+        name: '灵感空间',
+        url: './'
+      },
+      {
+        name: '公司团推',
+        url: './'
+      },
+      {
+        name: '联系我们',
+        url: './'
+      },
+      {
+        name: '先导影业',
+        url: './'
+      }
+    ]
+  },
+  {
+    name: '新闻动态',
+    url: './',
+    subNavList: [
+      {
+        name: '公司概述',
+        url: './'
+      }
+    ]
+  },
+  { name: '主营业务', url: './' },
+  { name: '项目案例', url: './' },
+  { name: '党建活动', url: './' },
+  { name: '加入我们', url: './' }
 ]
 
-function BasicLayout(props) {
-  return (
-    <div className={styles.container}>
-      <div className={styles.nav}>
-        <div className={styles.navBar}>
-          <a className={styles.navLogo} href='./home'><img src={logo} alt='' /></a>
-          <div className={styles.navList}>
-            {
-              navList.map((item, index) => {
-                return (
-                  <div className={styles.navListItem} key={index}>{item}</div>
-                )
-              })
-            }
+export default class BasicLayout extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      navIndex: -1,
+      showMobileNav: false,
+      current: 'mail',
+    }
+  }
+
+  showSubNavList = (index) => {
+    console.log(index)
+    clearTimeout(this.timer)
+    this.setState({
+      navIndex: index
+    })
+  }
+
+  hideSubNavList = () => {
+    this.timer = setTimeout(() => {
+      this.setState({
+        navIndex: -1
+      })
+    }, 300)
+  }
+
+  showMobileNavList = () => {
+    this.setState({
+      showMobileNav: !this.state.showMobileNav
+    })
+  }
+
+  render () {
+    return (
+      <div className={styles.container}>
+        <div className={styles.nav}>
+          <div className={styles.navBar}>
+            <a className={styles.navLogo} href='./home'><img src={logo} alt='' /></a>
+            <div className={styles.navList}>
+              {
+                navList.map((item, index) => {
+                  return (
+                    <div
+                      className={styles.navListItem}
+                      key={index}
+                      onMouseEnter={() => {this.showSubNavList(index)}}
+                      onMouseLeave={() => {this.hideSubNavList()}}>
+                      {item.name}
+                      {
+                        (item.subNavList && this.state.navIndex === index) &&
+                        <div className={styles.subNavList} onMouseEnter={() => {this.showSubNavList(index)}}>
+                          {
+                            item.subNavList.map((subItem, subIndex) => {
+                              return (
+                                <Link to={subItem.url} key={subIndex}>{subItem.name}</Link>
+                              )
+                            })
+                          }
+                        </div>
+                      }
+                    </div>
+                  )
+                })
+              }
+            </div>
+            <div className={styles.mobileNavList}>
+              <Icon type="menu" style={{ color: '#FFFFFF', fontSize: 22 }} onClick={() => {this.showMobileNavList()}} />
+              {
+                this.state.showMobileNav && <div className={styles.subNavList}>
+                  {
+                    navList.map((item, index) => {
+                      return (
+                        <Link to={item.url} key={index}>{item.name}</Link>
+                      )
+                    })
+                  }
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+        {this.props.children}
+        <div className={styles.footer}>
+          <div className={styles.footerMain}>
+            <div className={styles.footerLeft}>
+              <div className={styles.footerLink}>
+                <Link to={'./about'}>关于我们</Link>
+                <span>|</span>
+                <Link to={'/'}>加入我们</Link>
+                <span>|</span>
+                长沙先导投资控股集团有限公司
+              </div>
+              <div className={styles.copyRight}>
+                <span>Copyright © Changsha Pilot Enshine culture media CO.,Ltd.</span>
+                <span>湘ICP备12009333号-1</span>
+              </div>
+            </div>
+            <div className={styles.footerRight}>
+              <img src={qrcode} alt='' />
+            </div>
           </div>
         </div>
       </div>
-      {props.children}
-    </div>
-  );
+    )
+  }
 }
-
-export default BasicLayout;
