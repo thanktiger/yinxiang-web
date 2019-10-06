@@ -3,7 +3,6 @@ import { Row, Col } from 'antd'
 import Link from 'umi/link';
 import styles from './index.less'
 
-import productListCover from '../../assets/productList_cover.png'
 import productCover1 from '../../assets/productListItem1.png'
 import productCover2 from '../../assets/productListItem2.png'
 import productCover3 from '../../assets/productListItem3.png'
@@ -48,12 +47,11 @@ export default class Product extends Component {
   render () {
     return (
       <div>
-        <img className={styles.productListCover} src={productListCover} alt='' />
+        <div className={styles.productListCover}>
+          <h2>优秀案例</h2>
+          <p>精心打造各种品牌活动，为客户提供对外展示的窗口</p>
+        </div>
         <div className={styles.productContainer}>
-          <div className={styles.productListShow}>
-            <h2>优秀案例</h2>
-            <p>精心打造各种品牌活动，为客户提供对外展示的窗口</p>
-          </div>
           <div>
           <Row>
             {
