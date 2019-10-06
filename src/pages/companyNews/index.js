@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import { Row, Col } from 'antd'
 import Link from 'umi/link';
 import styles from './index.less'
 
 import productListCover from '../../assets/productList_cover.png'
-import companyNewsPic from '../../assets/productListItem4.png'
 
 const newsList = [
   {
