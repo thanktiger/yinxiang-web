@@ -5,7 +5,7 @@
 
 .productContainer {
   position: relative;
-  max-width: 1140px;
+  max-width: 750px;
   margin:0 auto;
   padding: 15px;
 }
@@ -16,26 +16,43 @@
   margin: -80px auto 110px auto;
 }
 
-.productContext {
- 
+.productRichText {
 
-  h2 {
+  p {
     font-size: 24px;
     color: #2C3241;
-    line-height: 28px;
-  }
-
-  p{
-    font-size: 24px;
-    color: #00141D;
     line-height: 40px;
-  }
-  
-  .productContext_list, img {
-    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: justify;
   }
 
   img {
-    width:100%;
+    display: block;
+    max-width: 100%;
+    margin: 50px auto 50px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .productParkBox {
+    font-size: 18px;
+    margin: -80px auto 50px auto;
+  }
+
+  .productRichText {
+
+    p {
+      font-size: 18px;
+      color: #2C3241;
+      line-height: 30px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 20px auto 20px;
+    }
   }
 }

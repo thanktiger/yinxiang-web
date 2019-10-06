@@ -60,6 +60,8 @@
 
 .companyNewsListItem {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding-bottom: 60px;
   margin-bottom: 60px;
   border-bottom: 1px solid #9797974d;
@@ -81,6 +83,9 @@
     color: #2B292D;
     line-height: 24px;
     text-decoration: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   p {
@@ -112,6 +117,69 @@
       padding-right: 10px;
       margin-right: 10px;
       border-right: 1px solid #2B292D;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .companyNewsTab {
+    margin-top: 20px;
+  
+    div {
+      height: 40px;
+      font-size: 14px;
+      line-height: 40px;
+      margin-left: 10px;
+      cursor: pointer;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .companyNewsList {
+    margin-top: 40px;
+  }
+
+  .companyNewsListItem {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  
+    &:last-child {
+      border: none;
+    }
+  
+    .calcWidth {
+      width: calc(100% - 110px);
+    }
+  
+    a {
+      font-size: 18px;
+      line-height: 18px;
+    }
+  
+    p {
+      font-size: 14px;
+      line-height: 14px;
+      margin: 10px 0;
+    }
+  
+    img {
+      width: 80px;
+      height: 64px;
+      margin-left: 10px;
+    }
+  
+    .companyNewsListItemLeftInfo {
+      font-size: 14px;
+      line-height: 14px;
+  
+      span {
+        padding-right: 5px;
+        margin-right: 5px;
+        border-right: 1px solid #2B292D;
+      }
     }
   }
 }

@@ -4,6 +4,8 @@ import styles from './index.less'
 
 import productListCover from '../../assets/productList_cover.png'
 
+const tabList = ['全部动态', '集团动态', '业务动态', '通知公告']
+
 const newsList = [
   {
     title: '设计心理学教我的五碗“真鸡汤”',
@@ -35,7 +37,22 @@ const newsList = [
 ]
 
 export default class Product extends Component {
+
+  constructor (props) {
+    super(props)
+    this.state = {
+      tabIndex: 0
+    }
+  }
+
+  onChangeTab = (index) => {
+    this.setState({
+      tabIndex: index
+    })
+  }
+
   render () {
+    let { tabIndex } = this.state
     return (
       <div>
         <div className={styles.productListCover}>
@@ -44,30 +61,101 @@ export default class Product extends Component {
         </div>
         <div className={styles.productContainer}>
           <div className={styles.companyNewsTab}>
-            <div className={styles.companyNewsTabHover}>全部动态</div>
-            <div>集团动态</div>
-            <div>业务动态</div>
-            <div>通知公告</div>
-          </div>
-          <div className={styles.companyNewsList}>
             {
-              newsList.map((item, index) => {
+              tabList.map((item, index) => {
                 return (
-                  <div className={styles.companyNewsListItem} key={index}>
-                    <div className={[`${styles.companyNewsListItemLeft}`, item.cover ? `${styles.calcWidth}` : ''].join(' ')}>
-                      <Link to='./'>{item.title}</Link>
-                      <p>{item.abstract}</p>
-                      <div className={styles.companyNewsListItemLeftInfo}>
-                        <span>{item.type}</span>
-                        <time>{item.date}</time>
-                      </div>
-                    </div>
-                    {item.cover && <img className={styles.companyNewsListItemRight} src={item.cover} alt='' />}
-                  </div>
+                  <div
+                    className={tabIndex === index ? styles.companyNewsTabHover : ''}
+                    key={index}
+                    onClick={() => { this.onChangeTab(index) }}>{item}</div>
                 )
               })
             }
           </div>
+          {
+            tabIndex === 0 && <div className={styles.companyNewsList}>
+              {
+                newsList.map((item, index) => {
+                  return (
+                    <div className={styles.companyNewsListItem} key={index}>
+                      <div className={[`${styles.companyNewsListItemLeft}`, item.cover ? `${styles.calcWidth}` : ''].join(' ')}>
+                        <Link to='./companyNewsDetail'>{item.title + tabIndex}</Link>
+                        <p>{item.abstract}</p>
+                        <div className={styles.companyNewsListItemLeftInfo}>
+                          <span>{item.type}</span>
+                          <time>{item.date}</time>
+                        </div>
+                      </div>
+                      {item.cover && <img className={styles.companyNewsListItemRight} src={item.cover} alt='' />}
+                    </div>
+                  )
+                })
+              }
+            </div>
+          }
+          {
+            tabIndex === 1 && <div className={styles.companyNewsList}>
+              {
+                newsList.map((item, index) => {
+                  return (
+                    <div className={styles.companyNewsListItem} key={index}>
+                      <div className={[`${styles.companyNewsListItemLeft}`, item.cover ? `${styles.calcWidth}` : ''].join(' ')}>
+                        <Link to='./'>{item.title + tabIndex}</Link>
+                        <p>{item.abstract}</p>
+                        <div className={styles.companyNewsListItemLeftInfo}>
+                          <span>{item.type}</span>
+                          <time>{item.date}</time>
+                        </div>
+                      </div>
+                      {item.cover && <img className={styles.companyNewsListItemRight} src={item.cover} alt='' />}
+                    </div>
+                  )
+                })
+              }
+            </div>
+          }
+          {
+            tabIndex === 2 && <div className={styles.companyNewsList}>
+              {
+                newsList.map((item, index) => {
+                  return (
+                    <div className={styles.companyNewsListItem} key={index}>
+                      <div className={[`${styles.companyNewsListItemLeft}`, item.cover ? `${styles.calcWidth}` : ''].join(' ')}>
+                        <Link to='./'>{item.title + tabIndex}</Link>
+                        <p>{item.abstract}</p>
+                        <div className={styles.companyNewsListItemLeftInfo}>
+                          <span>{item.type}</span>
+                          <time>{item.date}</time>
+                        </div>
+                      </div>
+                      {item.cover && <img className={styles.companyNewsListItemRight} src={item.cover} alt='' />}
+                    </div>
+                  )
+                })
+              }
+            </div>
+          }
+          {
+            tabIndex === 3 && <div className={styles.companyNewsList}>
+              {
+                newsList.map((item, index) => {
+                  return (
+                    <div className={styles.companyNewsListItem} key={index}>
+                      <div className={[`${styles.companyNewsListItemLeft}`, item.cover ? `${styles.calcWidth}` : ''].join(' ')}>
+                        <Link to='./'>{item.title + tabIndex}</Link>
+                        <p>{item.abstract}</p>
+                        <div className={styles.companyNewsListItemLeftInfo}>
+                          <span>{item.type}</span>
+                          <time>{item.date}</time>
+                        </div>
+                      </div>
+                      {item.cover && <img className={styles.companyNewsListItemRight} src={item.cover} alt='' />}
+                    </div>
+                  )
+                })
+              }
+            </div>
+          }
         </div>
       </div>
     )
