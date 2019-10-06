@@ -6,37 +6,180 @@
 .nav {
   position: absolute;
   top: 0;
+  z-index: 8;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 90px;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 16px 0 rgba(44,50,65,0.08);
+}
 
-  .navBar {
+.navBar {
+  max-width: 1140px;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLogo {
+  img {
+    width: 268px;
+    height: 40px;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+
+  .navListItem {
+    position: relative;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 40px;
+    cursor: pointer;
+
+    .subNavList {
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 10px;
+      background: #FFFFFF;
+    
+      a {
+        color: #2B292D;
+        line-height: 38px;
+      }
+    }
+  }
+}
+
+.mobileNavList {
+  display: none;
+}
+
+// 底部
+.footer {
+  padding: 33px 0 30px 0;
+  border-top: 3px solid #FF7538;
+
+  .footerMain {
     max-width: 1140px;
-    width: 100%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    .navLogo {
-      img {
-        width: 268px;
-        height: 40px;
-      }
+    .footerLeft {
+      flex: 1;
     }
 
-    .navList {
-      display: flex;
-      align-items: center;
-
-      .navListItem {
-        font-size: 18px;
-        color: #FFFFFF;
-        margin-left: 40px;
+    .footerRight {
+      img {
+        width: 84px;
+        height: 84px;
       }
+    }
+  }
+}
+
+.footerLink {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #2B292D;
+  margin-bottom: 10px;
+
+  a, span {
+    font-size: 16px;
+    color: #2B292D;
+    line-height: 24px;
+  }
+
+  span {
+    padding: 0 15px;
+  }
+}
+
+.copyRight {
+  opacity: 0.6;
+  font-size: 16px;
+  color: #2B292D;
+  line-height: 24px;
+
+  span {
+    margin-right: 20px;
+  }
+}
+
+// 移动端
+@media screen and (max-width: 960px) {
+  .navBar {
+    height: 50px;
+    padding: 0 15px;
+  }
+
+  .navLogo {
+    img {
+      width: 134px;
+      height: 20px;
+    }
+  }
+
+  .navList {
+    display: none;
+  }
+
+  .mobileNavList {
+    position: relative;
+    display: block;
+    
+    .subNavList {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      transform: translateX(0);
+      width: 140px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 10px;
+      background: #FFFFFF;
+    
+      a {
+        color: #2B292D;
+        line-height: 38px;
+      }
+    }
+  }
+
+  .footerLink {
+    font-size: 12px;
+
+    a, span {
+      font-size: 12px;
+    }
+
+    span {
+      padding: 0 5px;
+    }
+  }
+
+  .copyRight {
+    font-size: 12px;
+
+    span {
+      margin-right: 10px;
     }
   }
 }

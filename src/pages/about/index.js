@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import styles from './index.less'
 
-import aboutCover from '../../assets/about_cover.png'
 import aboutStar from '../../assets/about_star.png'
 import aboutSpace from '../../assets/about_space.png'
 import aboutLeader from '../../assets/about_leader.png'
@@ -61,8 +60,7 @@ const departmentList = [
 export default class About extends Component {
   render () {
     return (
-      <div>
-        <img className={styles.aboutCover} src={aboutCover} alt='' />
+      <div className={styles.aboutContainer}>
         <div className={styles.globalContainer}>
           <Row>
             <Col span={24}>
@@ -90,7 +88,7 @@ export default class About extends Component {
                   {
                     leaderList.map((item, index) => {
                       return (
-                        <Col xs={24} sm={24} md={12} lg={6}>
+                        <Col xs={24} sm={24} md={12} lg={6} key={index}>
                           <div className={styles.leaderInfo}>
                             <img src={item.avatar} alt='' />
                             <h4>{item.name}</h4>
@@ -109,7 +107,7 @@ export default class About extends Component {
             {
               departmentList.map((item, index) => {
                 return (
-                  <Col xs={24} sm={24} md={12} lg={12}>
+                  <Col xs={24} sm={24} md={12} lg={12} key={index}>
                     <div className={styles.department}>
                       <h3>{item.name}</h3>
                       <p>{item.description}</p>
@@ -123,11 +121,8 @@ export default class About extends Component {
             <h3>联系我们</h3>
             <p className={styles.imageTextIntro}>一封邮件或许正是成就一个出色产品的开端</p>
             <div className={styles.contact}>
-              <img src={aboutContact} alt='' />
-              <div className={styles.contactAddress}>
-                <p>联系地址：长沙市岳麓区先导路179号湘江时代写字楼A1栋九楼</p>
-                <p>联系电话：0731-88222599</p>
-              </div>
+              <p>联系地址：长沙市岳麓区先导路179号湘江时代写字楼A1栋九楼</p>
+              <p>联系电话：0731-88222599</p>
             </div>
           </div>
         </div>
