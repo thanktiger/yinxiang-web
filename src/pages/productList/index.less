@@ -24,12 +24,11 @@
 .productContainer {
   position: relative;
   max-width: 1140px;
-  margin:0 auto;
-  padding: 15px;
+  margin: 0 auto;
 }
 
 .productListTop {
-  margin: 85px auto 80px auto;
+  margin: 85px auto 0 auto;
 }
 
 .productListItem {
@@ -47,5 +46,15 @@
     bottom: 30px;
     font-size: 24px;
     color: #FFFFFF;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .productListTop {
+    margin: 35px auto 0 auto;
+  }
+
+  .productContainer {
+    padding: 0 15px;
   }
 }
