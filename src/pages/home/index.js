@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Row, Col } from 'antd'
+import { Row, Col, Carousel } from 'antd'
 import Link from 'umi/link';
 import styles from './index.less'
 
+import productListCover from '../../assets/productList_cover.png'
 import productCover1 from '../../assets/productListItem1.png'
 import productCover2 from '../../assets/productListItem2.png'
 import productCover3 from '../../assets/productListItem3.png'
@@ -110,11 +111,13 @@ export default class Product extends Component {
   render () {
     let { current } = this.state
     return (
-      <div>
-        <div className={styles.productListCover}>
-          <h2>优秀案例</h2>
-          <p>精心打造各种品牌活动，为客户提供对外展示的窗口</p>
-        </div>
+      <div className={styles.homeContainer}>
+        <Carousel autoplay>
+          <Link to={'#'}><img src={productListCover} alt='' /></Link>
+          <Link to={'#'}><img src={productListCover} alt='' /></Link>
+          <Link to={'#'}><img src={productListCover} alt='' /></Link>
+          <Link to={'#'}><img src={productListCover} alt='' /></Link>
+        </Carousel>
         <div className={styles.productContainer}>
           <h3 className={styles.ProductsCore}>主要业务</h3>
           <p className={styles.ProductsCoreIntro}>品牌策划与活动执行、广告资源整合运营、广告制作工程等</p> 
@@ -172,11 +175,11 @@ export default class Product extends Component {
               </div>
             </Col>
             <Col xs={24} sm={24} md={12} lg={12}>
-              <div>
+              <div className={styles.NewsRightList}>
                 {
                   NewsItem.map((item, index) => {
                     return (
-                      <div className={styles.NewsRight} key={index}>
+                      <div className={styles.NewsRightListItem} key={index}>
                         <h4>{item.name}</h4>
                         <p>{item.intro}</p>
                       </div>
