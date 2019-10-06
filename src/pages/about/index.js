@@ -118,7 +118,7 @@ export default class About extends Component {
             }
           </Row>
           <div className={styles.imageText}>
-            <h3>联系我们</h3>
+            <h3 id='contact'>联系我们</h3>
             <p className={styles.imageTextIntro}>一封邮件或许正是成就一个出色产品的开端</p>
             <div className={styles.contact}>
               <p>联系地址：长沙市岳麓区先导路179号湘江时代写字楼A1栋九楼</p>

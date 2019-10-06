@@ -52,7 +52,7 @@ export default class Product extends Component {
           <p>精心打造各种品牌活动，为客户提供对外展示的窗口</p>
         </div>
         <div className={styles.productContainer}>
-          <div>
+          <div className={styles.productListTop}>
           <Row>
             {
               productListItem.map((item, index) => {

@@ -3,7 +3,6 @@ import { Row, Col } from 'antd'
 import Link from 'umi/link';
 import styles from './index.less'
 
-import aboutCover from '../../assets/about_cover.png'
 import ProductsBoxIcon1 from '../../assets/icon-index-01-dark.png'
 import ProductsBoxIcon2 from '../../assets/icon-index-02-dark.png'
 import ProductsBoxIcon3 from '../../assets/icon-index-03-dark.png'
@@ -72,8 +71,7 @@ const ProductsPlanItem = [
 export default class Products extends Component {
   render () {
     return (
-      <div>
-        <img className={styles.aboutCover} src={aboutCover} alt='' />
+      <div className={styles.aboutContainer}>
         <div className={styles.productContainer}>
           <div className={styles.introduction}>
             <p>我们善于深入业务</p>

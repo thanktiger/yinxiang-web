@@ -169,10 +169,12 @@ export default class Product extends Component {
           <div className={styles.News}>
           <Row>
             <Col xs={24} sm={24} md={12} lg={12}>
+            <Link to='./companyNews'>
               <div className={styles.NewsLeft}>
                 <img src={NewsCover} alt=''/>
                 <p>用更年轻更简短有力的语言传达品牌认知</p>
               </div>
+            </Link>
             </Col>
             <Col xs={24} sm={24} md={12} lg={12}>
               <div className={styles.NewsRightList}>
@@ -180,7 +182,7 @@ export default class Product extends Component {
                   NewsItem.map((item, index) => {
                     return (
                       <div className={styles.NewsRightListItem} key={index}>
-                        <h4>{item.name}</h4>
+                        <Link to='./companyNewsDetail'><h4>{item.name}</h4></Link>
                         <p>{item.intro}</p>
                       </div>
                     )

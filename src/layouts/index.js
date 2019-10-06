@@ -8,23 +8,23 @@ import qrcode from '../assets/qrcode.png'
 const navList = [
   {
     name: '关于银象',
-    url: './',
+    url: './home',
     subNavList: [
       {
         name: '公司概述',
-        url: './'
+        url: './about'
       },
       {
         name: '灵感空间',
-        url: './'
+        url: './about'
       },
       {
-        name: '公司团推',
-        url: './'
+        name: '公司团队',
+        url: './about'
       },
       {
         name: '联系我们',
-        url: './'
+        url: './about#contact'
       },
       {
         name: '先导影业',
@@ -34,16 +34,16 @@ const navList = [
   },
   {
     name: '新闻动态',
-    url: './',
+    url: './companyNews',
     subNavList: [
       {
         name: '公司概述',
-        url: './'
+        url: './about'
       }
     ]
   },
-  { name: '主营业务', url: './' },
-  { name: '项目案例', url: './' },
+  { name: '主营业务', url: './products' },
+  { name: '项目案例', url: './productList' },
   { name: '党建活动', url: './' },
   { name: '加入我们', url: './' }
 ]
@@ -91,9 +91,10 @@ export default class BasicLayout extends Component {
               {
                 navList.map((item, index) => {
                   return (
-                    <div
+                    <Link
                       className={styles.navListItem}
                       key={index}
+                      to={item.url}
                       onMouseEnter={() => {this.showSubNavList(index)}}
                       onMouseLeave={() => {this.hideSubNavList()}}>
                       {item.name}
@@ -109,7 +110,7 @@ export default class BasicLayout extends Component {
                           }
                         </div>
                       }
-                    </div>
+                    </Link>
                   )
                 })
               }
