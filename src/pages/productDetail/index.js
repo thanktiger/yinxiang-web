@@ -20,7 +20,7 @@ export default class Product extends Component {
             <img className={styles.productPicOne} src=${productPicOne} alt='' />
             <p className={styles.productContext_list}>几千甚至上万的年卡费用、无休止的推销、人群恐惧症…让健身 — 这个本应轻松、愉悦的事，变得难开始、更难坚持。有别于传统健身房，公园盒子（PARKBOX）智能健身舱布局社区，他们希望社区居民下个楼就能轻松健身，按次付费、全程自助；盒子内多样的器械满足有氧、无氧锻炼需求，还配有智能教练；健身舱最多容纳 2~6 人，不拥挤、不尴尬。公园盒子的全新商业模式，解决了传统健身房带给用户的诸多痛点，让健身回归轻松、愉悦。</p>
             <img className={styles.productPic} src=${productPic} alt='' />
-            <img className={styles.productParkBox} src=${productParkBox} alt='' /><img src=${productPic} />`
+            <img className={styles.productParkBox} src=${productParkBox} alt='' />`
           }} />
         </div>
       </div>

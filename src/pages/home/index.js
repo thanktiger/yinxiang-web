@@ -118,33 +118,37 @@ export default class Product extends Component {
           <Link to={'#'}><img src={productListCover} alt='' /></Link>
           <Link to={'#'}><img src={productListCover} alt='' /></Link>
         </Carousel>
-        <div className={styles.productContainer}>
-          <h3 className={styles.ProductsCore}>主要业务</h3>
-          <p className={styles.ProductsCoreIntro}>品牌策划与活动执行、广告资源整合运营、广告制作工程等</p> 
-          <div className={styles.business}>
-            <Row gutter={30}>
-              {
-                BusinessItem.map((item, index) => {
-                  return (
-                    <Col xs={24} sm={24} md={12} lg={12} key={index}>
-                      <div
-                        className={styles.businessBox}
-                        onMouseEnter={() => this.hoverBussinessItem(index)}
-                        onMouseLeave={() => this.leaveBussinessItem()}>
-                        <img src={current === index ? item.cover : item.activeCover} alt=''/>
-                        <span className={styles.businessBoxRight}>
-                          <h3>{item.title}</h3>
-                          <p>{item.abstract}</p>
-                        </span>
-                      </div>
-                    </Col>
-                  )
-                })
-              }
-            </Row>
+        <div className={styles.ProductsCoreBg}>
+          <div className={styles.productContainer}>
+          
+            <h3 className={styles.ProductsCore}>主营业务</h3>
+            <p className={styles.ProductsCoreIntro}>品牌策划与活动执行、广告资源整合运营、广告制作工程等</p> 
+            <div className={styles.business}>
+              <Row gutter={30}>
+                {
+                  BusinessItem.map((item, index) => {
+                    return (
+                      <Col xs={24} sm={24} md={12} lg={12} key={index}>
+                        <div
+                          className={styles.businessBox}
+                          onMouseEnter={() => this.hoverBussinessItem(index)}
+                          onMouseLeave={() => this.leaveBussinessItem()}>
+                          <img src={current === index ? item.cover : item.activeCover} alt=''/>
+                          <span className={styles.businessBoxRight}>
+                            <h3>{item.title}</h3>
+                            <p>{item.abstract}</p>
+                          </span>
+                        </div>
+                      </Col>
+                    )
+                  })
+                }
+              </Row>
 
-
+            </div>
           </div>
+        </div>
+        <div className={styles.productContainer}>
           <div>
             <h3 className={styles.ProductsCore}>优秀案例</h3>
             <p className={styles.ProductsCoreIntro}>精心打造各种品牌活动，为客户提供对外展示的窗口</p> 

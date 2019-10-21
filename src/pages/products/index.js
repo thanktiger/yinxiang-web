@@ -13,7 +13,7 @@ import ProductsCorePic03 from '../../assets/productsPic03.png'
 import ProductsCorePic04 from '../../assets/productsPic04.png'
 import ProductsCorePic05 from '../../assets/productsPic05.png'
 import ProductsCorePic06 from '../../assets/productsPic06.png'
-import ProductsServicePic from '../../assets/ProductsService.jpg'
+import ProductsServicePic from '../../assets/ProductsService.png'
 
 const ProductsBox = [
   {
@@ -51,19 +51,9 @@ const ProductsPlanItem = [
     intro: '为客户提供整体营销策略，线上广告创意策略、创意设计到广告投放策略、投放优化、效果分析等的新媒体全案服务。'
   },
   {
-    pic: ProductsCorePic04,
+    pic: ProductsCorePic05,
     title: '广告制作工程',
     intro: '为客户提供企业广告、商业导视、门店招牌、灯箱发光字、围挡广告位、道旗桁架、亮化工程等报批、设计、制作、安装、售后等为一体的综合服务。'
-  },
-  {
-    pic: ProductsCorePic05,
-    title: '交互与视觉设计',
-    intro: '从研究中发现体验价值，将其转化为符合使用场景和用户真正需求的交互模型。为品牌与用户之间提供最有效的沟通方式。'
-  },
-  {
-    pic: ProductsCorePic06,
-    title: '动态与音效设计',
-    intro: '挑战想象力，探索可能性，从视听领域全方位衡量产品使用体验及模型构建。'
   }
 ]
 

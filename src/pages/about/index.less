@@ -120,19 +120,77 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url('../../assets//about_contact.png') no-repeat top center;
+  // background: url('../../assets//about_contact.png') no-repeat top center;
+  background: #F3F3F3;
   background-size: cover;
-  height: 200px;
-  line-height: 200px;
+  height: 130px;
+  line-height: 130px;
+  padding-top: 20px;
 
   p {
     font-size: 18px;
     color: #2B292D;
-    letter-spacing: 0;
     text-align: center;
     line-height: 28px;
     font-weight: bold;
   }
+}
+
+.joinUsText {
+  background: #FEFCF9;
+  padding: 60px 0;
+  text-align: center;
+
+  h3 {
+    font-size: 28px;
+    color: #2B292D;
+    text-align: center;
+    line-height: 28px;
+  }
+
+  .joinUsTextIntro {
+    opacity: 0.5;
+    font-size: 18px;
+    color: #2B292D;
+    text-align: center;
+    line-height: 28px;
+  }
+
+  .joinUs {
+    max-width: 1140px;
+    margin: 60px auto 40px auto;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+
+  .mailbox {
+    font-size: 18px;
+    color: #2B292D;
+    text-align: center;
+    line-height: 28px;
+  }
+  img {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+}
+
+.aboutLeader_b, .aboutLeader_t {
+  font-size: 24px;
+  color: #2B292D;
+  text-align: center;
+  line-height: 30px;
+  max-width: 786px;
+  margin: 0 auto;
+}
+
+.aboutLeader_b {
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.aboutStaff {
+  margin: 60px 0 30px 0;
 }
 
 @media screen and (max-width: 750px) {
@@ -179,4 +237,19 @@
       line-height: 22px;
     }
   }
+
+  .joinUs {
+  
+
+    img {
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
+  }
+
+  .aboutLeader_b, .aboutLeader_t {
+    font-size: 18px;
+  }
+
 }
+
