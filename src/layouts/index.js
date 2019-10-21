@@ -8,7 +8,7 @@ import qrcode from '../assets/qrcode.png'
 const navList = [
   {
     name: '关于银象',
-    url: './home',
+    url: './',
     subNavList: [
       {
         name: '公司概述',
@@ -86,7 +86,7 @@ export default class BasicLayout extends Component {
       <div className={styles.container}>
         <div className={styles.nav}>
           <div className={styles.navBar}>
-            <a className={styles.navLogo} href='./home'><img src={logo} alt='' /></a>
+            <a className={styles.navLogo} href='./'><img src={logo} alt='' /></a>
             <div className={styles.navList}>
               {
                 navList.map((item, index) => {
