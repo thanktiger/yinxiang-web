@@ -44,8 +44,8 @@ const navList = [
   },
   { name: '主营业务', url: './products' },
   { name: '项目案例', url: './productList' },
-  { name: '党建活动', url: './' },
-  { name: '加入我们', url: './' }
+  { name: '党建活动', url: './partyBuilding' },
+  { name: '加入我们', url: '././about#Join' }
 ]
 
 export default class BasicLayout extends Component {

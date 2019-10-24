@@ -36,11 +36,13 @@ export default class About extends Component {
               </div>
             </Col>
           </Row>
+        </div>
+        <div className={styles.imageText_bgc}>  
           <Row>
             <Col span={24}>
-              <div className={[`${styles.imageText}`, `${styles.bgc}`].join(' ')}>
+              <div className={[`${styles.imageText_box}`].join(' ')}>
                 <h3>公司团队</h3>
-                <div className={styles.imageTextIntro}>
+                <div className={styles._boxIntro}>
                   <p>公司拥有一支行业经验丰富、专业职能完整的品牌运营服务精英团队</p>
                   <p>团队成员均来自于国内知名广告机构和大型企业</p>
                   <p>优秀运营、策划、设计、媒介与执行人才云集于此</p>
@@ -57,11 +59,11 @@ export default class About extends Component {
                 <div className={styles.aboutStaff}><img src={aboutStaff1} alt='' /></div>
                 <div><img src={aboutStaff2} alt='' /></div>
                 
-
               </div>
             </Col>
           </Row>
-          
+        </div>  
+        <div className={styles.globalContainer}>  
           <div className={styles.imageText}>
             <h3 id='contact'>联系我们</h3>
             <p className={styles.imageTextIntro}>一封邮件或许正是成就一个出色产品的开端</p>
@@ -73,7 +75,7 @@ export default class About extends Component {
           </div>
         </div>
         <div className={styles.joinUsText}>
-          <h3 id='contact'>加入我们</h3>
+          <h3 id='Join'>加入我们</h3>
           <p className={styles.joinUsTextIntro}>欢迎成为我们大家庭的一员</p>
           <div className={styles.joinUs}>
           <Row>
