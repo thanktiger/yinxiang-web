@@ -3,7 +3,7 @@ import { Row, Col, Carousel } from 'antd'
 import Link from 'umi/link';
 import styles from './index.less'
 
-import productListCover from '../assets/productList_cover.png'
+import productListCover from '../assets/about_cover.png'
 import productCover1 from '../assets/productListItem1.png'
 import productCover2 from '../assets/productListItem2.png'
 import productCover3 from '../assets/productListItem3.png'
