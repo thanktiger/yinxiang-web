@@ -171,7 +171,7 @@ export default class Product extends Component {
           <h3 className={styles.ProductsCore}>公司动态</h3>
           <p className={styles.ProductsCoreIntro}>公司与集团动态，与集团发展共成长</p> 
           <div className={styles.News}>
-          <Row>
+          <Row type='flex'>
             <Col xs={24} sm={24} md={12} lg={12}>
             <Link to='./companyNews'>
               <div className={styles.NewsLeft}>
