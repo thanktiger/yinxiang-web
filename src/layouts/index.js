@@ -12,19 +12,23 @@ const navList = [
     subNavList: [
       {
         name: '公司概述',
-        url: './about'
+        url: './about',
+        anchorName: 'company'
       },
       {
         name: '灵感空间',
-        url: './about'
+        url: './about',
+        anchorName: 'spacing'
       },
       {
         name: '公司团队',
-        url: './about'
+        url: './about',
+        anchorName: 'team'
       },
       {
         name: '联系我们',
-        url: './about#contact'
+        url: './about',
+        anchorName: 'contact'
       },
       {
         name: '先导影业',
@@ -32,20 +36,11 @@ const navList = [
       }
     ]
   },
-  {
-    name: '新闻动态',
-    url: './companyNews',
-    subNavList: [
-      {
-        name: '公司概述',
-        url: './about'
-      }
-    ]
-  },
+  { name: '新闻动态', url: './companyNews' },
   { name: '主营业务', url: './products' },
   { name: '项目案例', url: './productList' },
   { name: '党建活动', url: './partyBuilding' },
-  { name: '加入我们', url: '././about#Join' }
+  { name: '加入我们', url: './about' }
 ]
 
 export default class BasicLayout extends Component {
@@ -57,6 +52,15 @@ export default class BasicLayout extends Component {
       showMobileNav: false,
       current: 'mail',
     }
+  }
+
+  scrollToAnchor = (anchorName) => {
+    setTimeout(() => {
+      if (anchorName) {
+        let anchorElement = document.getElementById(anchorName);
+        if(anchorElement) { anchorElement.scrollIntoView(); }
+      }
+    }, 100)
   }
 
   showSubNavList = (index) => {
@@ -104,7 +108,10 @@ export default class BasicLayout extends Component {
                           {
                             item.subNavList.map((subItem, subIndex) => {
                               return (
-                                <Link to={subItem.url} key={subIndex}>{subItem.name}</Link>
+                                <Link
+                                  to={subItem.url}
+                                  key={subIndex}
+                                  onClick={() => {this.scrollToAnchor(subItem.anchorName)}}>{subItem.name}</Link>
                               )
                             })
                           }
@@ -138,9 +145,9 @@ export default class BasicLayout extends Component {
               <div className={styles.footerLink}>
                 <Link to={'./about'}>关于我们</Link>
                 <span>|</span>
-                <Link to={'/'}>加入我们</Link>
+                <Link to={'/about'} onClick={() => {this.scrollToAnchor('join')}}>加入我们</Link>
                 <span>|</span>
-                长沙先导投资控股集团有限公司
+                <a href={'https://www.cpih.com/'}>长沙先导投资控股集团有限公司</a>
               </div>
               <div className={styles.copyRight}>
                 <span>Copyright © Changsha Pilot Enshine culture media CO.,Ltd.</span>

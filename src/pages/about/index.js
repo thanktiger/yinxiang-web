@@ -15,13 +15,14 @@ import joinUs_btn3 from '../../assets/joinUs_btn3.png'
 
 
 export default class About extends Component {
+
   render () {
     return (
       <div className={styles.aboutContainer}>
         <div className={styles.globalContainer}>
           <Row>
             <Col span={24}>
-              <div className={styles.introduction}>
+              <div id='company' className={styles.introduction}>
                 <img src={aboutStar} alt='' />
                 <p>长沙先导银象文化传媒有限公司是一家集品牌运营、新媒体运营、IP产业运营、大型活动组织为一体的新锐文化传媒企业，依托雄厚且丰富的资源优势，开展文化传媒全产业链业务。公司拥有优秀的运营、策划、设计、媒介与执行人才团队，以专业的品牌策划与运作能力为支撑，向客户提供前期策划、中期执行、后期维护的一站式服务。主营业务包括品牌策划与活动执行、广告资源整合运营、广告制作工程等。长沙先导银象文化传媒有限公司是一家集品牌运营、新媒体运营、IP产业运营、大型活动组织为一体的新锐文化传媒企业，依托雄厚且丰富的资源优势，开展文化传媒全产业链业务。公司拥有优秀的运营、策划、设计、媒介与执行人才团队，以专业的品牌策划与运作能力为支撑，向客户提供前期策划、中期执行、后期维护的一站式服务。主营业务包括品牌策划与活动执行、广告资源整合运营、广告制作工程等。</p>
               </div>
@@ -29,7 +30,7 @@ export default class About extends Component {
           </Row>
           <Row>
             <Col span={24}>
-              <div className={styles.imageText}>
+              <div id='spacing' className={styles.imageText}>
                 <h3>灵感空间</h3>
                 <p className={styles.imageTextIntro}>工作空间是我们工作方式的一部分。我们倡导自由，激发式的工作氛围</p>
                 <img src={aboutSpace} alt='' />
@@ -37,7 +38,7 @@ export default class About extends Component {
             </Col>
           </Row>
         </div>
-        <div className={styles.imageText_bgc}>  
+        <div id='team' className={styles.imageText_bgc}>  
           <Row>
             <Col span={24}>
               <div className={[`${styles.imageText_box}`].join(' ')}>
@@ -63,9 +64,9 @@ export default class About extends Component {
             </Col>
           </Row>
         </div>  
-        <div className={styles.globalContainer}>  
+        <div id='contact' className={styles.globalContainer}>  
           <div className={styles.imageText}>
-            <h3 id='contact'>联系我们</h3>
+            <h3>联系我们</h3>
             <p className={styles.imageTextIntro}>一封邮件或许正是成就一个出色产品的开端</p>
             <img src={aboutMap} alt='' />
             <div className={styles.contact}>
@@ -74,8 +75,8 @@ export default class About extends Component {
             </div>
           </div>
         </div>
-        <div className={styles.joinUsText}>
-          <h3 id='Join'>加入我们</h3>
+        <div id='join' className={styles.joinUsText}>
+          <h3>加入我们</h3>
           <p className={styles.joinUsTextIntro}>欢迎成为我们大家庭的一员</p>
           <div className={styles.joinUs}>
           <Row>

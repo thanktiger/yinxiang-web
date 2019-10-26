@@ -112,11 +112,11 @@ export default class Product extends Component {
     let { current } = this.state
     return (
       <div className={styles.homeContainer}>
-        <Carousel autoplay>
-          <Link to={'#'}><img src={productListCover} alt='' /></Link>
-          <Link to={'#'}><img src={productListCover} alt='' /></Link>
-          <Link to={'#'}><img src={productListCover} alt='' /></Link>
-          <Link to={'#'}><img src={productListCover} alt='' /></Link>
+        <Carousel autoplay={false}>
+          <Link to={'#'}><img src={productListCover} alt='' style={{ width: '100%' }} /></Link>
+          <Link to={'#'}><img src={productListCover} alt='' style={{ width: '100%' }} /></Link>
+          <Link to={'#'}><img src={productListCover} alt='' style={{ width: '100%' }} /></Link>
+          <Link to={'#'}><img src={productListCover} alt='' style={{ width: '100%' }} /></Link>
         </Carousel>
         <div className={styles.ProductsCoreBg}>
           <div className={styles.productContainer}>
@@ -157,10 +157,10 @@ export default class Product extends Component {
                 productListItem.map((item, index) => {
                   return (
                     <Col xs={24} sm={24} md={12} lg={12} key={index}>
-                      <div className={styles.productListItem}>
+                      <Link to='./productDetail' target='_blank' className={styles.productListItem}>
                         <img src={item.avatar} alt='' />
-                        <Link to='./productDetail'>{item.title}</Link>
-                      </div>
+                        <span>{item.title}</span>
+                      </Link>
                     </Col>
                   )
                 })
