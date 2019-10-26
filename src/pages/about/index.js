@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import styles from './index.less'
-import Link from 'umi/link';
 
 import aboutStar from '../../assets/about_star.png'
 import aboutSpace from '../../assets/about_space.png'
@@ -81,13 +80,28 @@ export default class About extends Component {
           <div className={styles.joinUs}>
           <Row>
             <Col xs={24} sm={24} md={8} lg={8}>
-              <a href='https://company.zhaopin.com/cz536843830.htm' target='_blank'><img src={joinUs_btn1} alt='' /></a>
+              <a
+                href='https://company.zhaopin.com/cz536843830.htm'
+                target='_blank'
+                rel='noopener noreferrer'>
+                  <img src={joinUs_btn1} alt='' />
+              </a>
             </Col> 
             <Col xs={24} sm={24} md={8} lg={8}>
-              <a href='https://jobs.51job.com/all/co4533946.html' target='_blank'><img src={joinUs_btn2} alt='' /></a>
+              <a
+                href='https://jobs.51job.com/all/co4533946.html'
+                target='_blank'
+                rel='noopener noreferrer'>
+                  <img src={joinUs_btn2} alt='' />
+              </a>
             </Col>
             <Col xs={24} sm={24} md={8} lg={8}>
-              <a href='http://www.hnrcsc.com/web/view/view-company/id/CAC538976E5D929E.html?r=1' target='_blank'><img src={joinUs_btn3} alt='' /></a> 
+              <a
+                href='http://www.hnrcsc.com/web/view/view-company/id/CAC538976E5D929E.html?r=1'
+                target='_blank'
+                rel='noopener noreferrer'>
+                  <img src={joinUs_btn3} alt='' />
+              </a> 
             </Col>
              
           </Row>

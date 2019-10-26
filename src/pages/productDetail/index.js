@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Row, Col } from 'antd'
 import styles from './index.less'
 
 import productCover from '../../assets/product_cover.png'

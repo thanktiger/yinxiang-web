@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { Row, Col } from 'antd'
-import Link from 'umi/link';
 import styles from './index.less'
 
 import partyBuilding_pic1 from '../../assets/partyBuilding1.png'

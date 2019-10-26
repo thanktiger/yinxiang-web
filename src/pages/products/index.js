@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
-import Link from 'umi/link';
 import styles from './index.less'
 
 import ProductsBoxIcon1 from '../../assets/icon-index-01-dark.png'
@@ -10,9 +9,7 @@ import ProductsBoxIcon4 from '../../assets/icon-index-04-dark.png'
 import ProductsCorePic01 from '../../assets/productsPic01.png'
 import ProductsCorePic02 from '../../assets/productsPic02.png'
 import ProductsCorePic03 from '../../assets/productsPic03.png'
-import ProductsCorePic04 from '../../assets/productsPic04.png'
 import ProductsCorePic05 from '../../assets/productsPic05.png'
-import ProductsCorePic06 from '../../assets/productsPic06.png'
 import ProductsServicePic from '../../assets/ProductsService.png'
 
 const ProductsBox = [
@@ -71,7 +68,7 @@ export default class Products extends Component {
                 {
                   ProductsBox.map((item, index) => {
                     return (
-                      <Col xs={24} sm={24} md={12} lg={6}>
+                      <Col xs={24} sm={24} md={12} lg={6} key={index}>
                         <div className={styles.ProductsBox}>
                           <img src={item.avatar} alt='' />
                           <p>{item.name}</p>
