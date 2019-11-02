@@ -7,7 +7,10 @@ export default {
     ['umi-plugin-react', {
       antd: true,
       dva: false,
-      dynamicImport: { loadingComponent: '() => <></>' },
+      dynamicImport: {
+        webpackChunkName: true,
+        loadingComponent: '() => <></>'
+      },
       title: 'yinxiang-web',
       dll: false,
       
