@@ -20,18 +20,22 @@ import businessActiveCover4 from '../assets/icon-index-04-dark.png'
 
 const productListItem = [
   {
+    index: '01_hnjrfh',
     avatar: productCover1,
     title: '湖南省最高规格的金融盛会，荣获腾讯2017年度影响力传播奖',
   },
   {
+    index: '02_tyxsd',
     avatar: productCover2,
     title: '青少年“体育·新时代”冬夏令营系列活动',
   },
   {
+    index: '03_zgfdfzdh',
     avatar: productCover3,
     title: '谱写新时代中国饭店业高质量发展新篇章',
   },
   {
+    index: '04_csmxyyh',
     avatar: productCover4,
     title: '湘江西岸建设一座美好的“两型”新城',
   }
@@ -64,27 +68,13 @@ const BusinessItem = [
   }
 ]
 
-const NewsItem = [
-  {
-    name: '中国空军八一发布超燃宣传片 这一画面首次公开',
-    intro:'中国空军发布强军宣传片《初心伴我去战斗》，通过歼-20、轰-6K等新型…'
-  },
-  {
-    name: '台风“韦帕”华南沿海掀狂风骤雨 风暴潮警报升级',
-    intro:'台风“韦帕”1日先后在海南文昌和广东湛江沿海登陆后，2日继续向偏西方…'
-  },
-  {
-    name: '苹果再回应Siri泄露隐私：暂停全球Siri评估计划',
-    intro:'苹果进行彻底审查的同时已暂停全球的 Siri 评估计划。此外，用户将在未…'
-  },
-  {
-    name: '竞选集会上特朗普正演讲 台下抗议者举横幅造混乱打断3分钟',
-    intro:'8月1日，特朗普在俄亥俄州参加竞选集会时，现场发生了“尴尬一幕”：有…'
-  },
-  {
-    name: '长沙持续高温 动物们花式解暑',
-    intro:'酷热难耐的天气让长沙市生态动物园的动物们纷纷采用各种方式为自己解…'
-  }
+const NewsList = [
+  {index: "20191025_1613_0", title: "银象传媒党支部开展“不忘初心、牢记使命”主题教育心得交流座谈会", abstract: "根据支部“不忘初心、牢记使命”主题教育工作部署安排，10月24日下午，银象传媒党支部在公司919会议…一步规范党员徽章管理的工作提示》，会议由组织委员陈文同志主持，支部党员和入党积极分子参加了座谈会。"},
+  {index: "20191017_1547_0", title: "银象传媒支部开展支部书记讲专题党课活动", abstract: "根据“三会一课”制度和 “不忘初心、牢记使命”主题教育工作部署，10月17日上午，银象传媒支部在公司…支部书记讲专题党课活动，并组织观看了《初心与使命》廉政警示教育片，支部全体党员和入党积极分子参加。"},
+  {index: "20191012_1639_0", title: "银象传媒支部开展“不忘初心、牢记使命”主题教育集中学习杜家豪书记专题党课相关精神", abstract: "根据市委主题办的通知和集团党委要求，10月12日上午，银象传媒支部在公司919会议室集中学习了省委书…重自觉的共产党员》专题党课的相关精神。本次活动由支部书记肖宇同志主持，支部党员和入党积极分子参加。"},
+  {index: "20191012_1616_0", title: "不忘初心学党史 牢记使命扬传统————银象传媒党支部开展10月主题党日活动", abstract: "为牢记党的光荣历史，继承发扬党的优良传统。根据“不忘初心、牢记使命”主题教育的工作安排与部署，10月…30余人前往中国共产党长沙历陈列馆参观学习，缅怀毛泽东、杨开慧等革命先辈，重温共产党员的初心使命。"},
+  {index: "20190911_1514_0", title: "加强思想教育 引领党性升华————先导银象传媒党支部组织开展第三季度集中学习", abstract: "按照集团党委的统一部署，9月10日下午，先导银象传媒支部在公司919会议室开展第三季度集中学习，本次活动由支部书记肖宇同志主持，支部全体党员参加。"},
+  {index: "20190830_1901_0", title: "以制为尺、规范管理————银象传媒公司开展招采合约类制度培训", abstract: "为切实落实市委巡察组和集团巡察整改办的工作要求，严格规范内部管理流程，8月30日上午，银象传媒公司组织了招采合约相关制度培训。此次培训由副总经理陈文主持，全体员工参加。"}
 ]
 
 export default class Product extends Component {
@@ -157,7 +147,7 @@ export default class Product extends Component {
                 productListItem.map((item, index) => {
                   return (
                     <Col xs={24} sm={24} md={12} lg={12} key={index}>
-                      <Link to='./productDetail' target='_blank' className={styles.productListItem}>
+                      <Link to={`./productDetail?title=${item.index}`} target='_blank' className={styles.productListItem}>
                         <img src={item.avatar} alt='' />
                         <span>{item.title}</span>
                       </Link>
@@ -166,7 +156,7 @@ export default class Product extends Component {
                 })
               }
             </Row>
-            <Link className={styles.moreBtn} to='./productDetail'>查看更多案例</Link>
+            <Link className={styles.moreBtn} to='./productList'>查看更多案例</Link>
           </div>
           <h3 className={styles.ProductsCore}>公司动态</h3>
           <p className={styles.ProductsCoreIntro}>公司与集团动态，与集团发展共成长</p> 
@@ -176,20 +166,23 @@ export default class Product extends Component {
             <Link to='./companyNews'>
               <div className={styles.NewsLeft}>
                 <img src={NewsCover} alt=''/>
-                <p>用更年轻更简短有力的语言传达品牌认知</p>
+                <p>{NewsList[0].title}</p>
               </div>
             </Link>
             </Col>
             <Col xs={24} sm={24} md={12} lg={12}>
               <div className={styles.NewsRightList}>
                 {
-                  NewsItem.map((item, index) => {
-                    return (
-                      <div className={styles.NewsRightListItem} key={index}>
-                        <Link to='./companyNewsDetail'><h4>{item.name}</h4></Link>
-                        <p>{item.intro}</p>
-                      </div>
-                    )
+                  NewsList.map((item, index) => {
+                    if (index > 0) {
+                      return (
+                        <div className={styles.NewsRightListItem} key={index}>
+                          <Link to={`./companyNewsDetail?title=${item.index}`} target='_blank'><h4>{item.title}</h4></Link>
+                          <p>{item.abstract}</p>
+                        </div>
+                      )
+                    }
+                    return null
                   })
                 }
               </div>
