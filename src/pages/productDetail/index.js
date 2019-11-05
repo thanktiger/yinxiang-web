@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import styles from './index.less'
 
-import productCover from '../../assets/product_cover.png'
-
 export default class Product extends Component {
 
   constructor (props) {

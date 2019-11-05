@@ -8,7 +8,7 @@ import qrcode from '../assets/qrcode.png'
 const navList = [
   {
     name: '关于银象',
-    url: './',
+    url: './about',
     subNavList: [
       {
         name: '公司概述',
@@ -32,7 +32,7 @@ const navList = [
       },
       {
         name: '先导影业',
-        url: './'
+        url: './movie'
       }
     ]
   },
@@ -40,7 +40,7 @@ const navList = [
   { name: '主营业务', url: './products' },
   { name: '项目案例', url: './productList' },
   { name: '党建活动', url: './partyBuilding' },
-  { name: '加入我们', url: './about' }
+  { name: '加入我们', url: './about', anchorName: 'join' }
 ]
 
 export default class BasicLayout extends Component {
@@ -90,7 +90,7 @@ export default class BasicLayout extends Component {
       <div className={styles.container}>
         <div className={styles.nav}>
           <div className={styles.navBar}>
-            <a className={styles.navLogo} href='./'><img src={logo} alt='' /></a>
+            <Link className={styles.navLogo} to='./'><img src={logo} alt='' /></Link>
             <div className={styles.navList}>
               {
                 navList.map((item, index) => {
@@ -99,6 +99,7 @@ export default class BasicLayout extends Component {
                       className={styles.navListItem}
                       key={index}
                       to={item.url}
+                      onClick={() => {this.scrollToAnchor(item.anchorName)}}
                       onMouseEnter={() => {this.showSubNavList(index)}}
                       onMouseLeave={() => {this.hideSubNavList()}}>
                       {item.name}
@@ -151,7 +152,7 @@ export default class BasicLayout extends Component {
               </div>
               <div className={styles.copyRight}>
                 <span>Copyright © Changsha Pilot Enshine culture media CO.,Ltd.</span>
-                <span>湘ICP备12009333号-1</span>
+                <a href='http://www.beian.miit.gov.cn/'>湘ICP备19021825号-1</a>
               </div>
             </div>
             <div className={styles.footerRight}>

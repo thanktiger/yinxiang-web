@@ -11,7 +11,7 @@ export default {
         webpackChunkName: true,
         loadingComponent: '() => <></>'
       },
-      title: 'yinxiang-web',
+      title: '长沙先导银象文化传媒有限公司',
       dll: false,
       
       routes: {

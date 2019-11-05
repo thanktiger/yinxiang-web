@@ -18,6 +18,8 @@ import businessActiveCover2 from '../assets/icon-index-02-dark.png'
 import businessActiveCover3 from '../assets/icon-index-03-dark.png'
 import businessActiveCover4 from '../assets/icon-index-04-dark.png'
 
+import firstDataCover from '../../public/json/img/20191025_1613_0_01.jpg'
+
 const productListItem = [
   {
     index: '01_hnjrfh',
@@ -45,31 +47,31 @@ const BusinessItem = [
   {
     cover: businnesCover1,
     activeCover: businessActiveCover1,
-    title: '品牌策划与活动执行',
-    abstract:'根据市场目标做切实可行的产品方案，在激烈的市场竞争中获得优势。'
+    title: '品牌策划',
+    abstract:'根据市场目标做切实可行的产品方案，在激烈的市场竞争中获得优势'
   },
   {
     cover: businnesCover2,
     activeCover: businessActiveCover2,
-    title: '广告资源整合运营',
-    abstract:'整体营销策略，线上广告创意策略、创意设计到广告投放策略、投放优化、效果分析等的新媒体全案服务'
+    title: '活动执行',
+    abstract:'活动策划执行、 品牌设计推广、视频拍摄制作三箭齐发，带来创意力、执行力、品质力俱佳的市场口碑'
   },
   {
     cover: businnesCover3,
     activeCover: businessActiveCover3,
-    title: '广告制作工程',
-    abstract:'企业广告、商业导视、门店招牌、灯箱发光字、围挡广告位、道旗桁架、亮化工程等报批、设计、制作、安装、售后等为一体的综合服务'
+    title: '广告整合运营',
+    abstract:'整体营销策略，线上广告创意策略、创意设计到广告投放策略、投放优化、效果分析等的新媒体全案服务'
   },
   {
     cover: businnesCover4,
     activeCover: businessActiveCover4,
-    title: '空间与线下',
-    abstract:'将空间视为沟通场所，在意数据和信息如何在线上线下的流转，并与空间内的设施与服务发生互动。'
+    title: '广告制作',
+    abstract:'企业广告、商业导视、门店招牌、灯箱发光字、围挡广告位、道旗桁架、亮化工程等报批、设计、制作、安装、售后等为一体的综合服务'
   }
 ]
 
 const NewsList = [
-  {index: "20191025_1613_0", title: "银象传媒党支部开展“不忘初心、牢记使命”主题教育心得交流座谈会", abstract: "根据支部“不忘初心、牢记使命”主题教育工作部署安排，10月24日下午，银象传媒党支部在公司919会议…一步规范党员徽章管理的工作提示》，会议由组织委员陈文同志主持，支部党员和入党积极分子参加了座谈会。"},
+  {index: "20191025_1613_0", title: "银象传媒党支部开展“不忘初心、牢记使命”主题教育心得交流座谈会", img: firstDataCover},
   {index: "20191017_1547_0", title: "银象传媒支部开展支部书记讲专题党课活动", abstract: "根据“三会一课”制度和 “不忘初心、牢记使命”主题教育工作部署，10月17日上午，银象传媒支部在公司…支部书记讲专题党课活动，并组织观看了《初心与使命》廉政警示教育片，支部全体党员和入党积极分子参加。"},
   {index: "20191012_1639_0", title: "银象传媒支部开展“不忘初心、牢记使命”主题教育集中学习杜家豪书记专题党课相关精神", abstract: "根据市委主题办的通知和集团党委要求，10月12日上午，银象传媒支部在公司919会议室集中学习了省委书…重自觉的共产党员》专题党课的相关精神。本次活动由支部书记肖宇同志主持，支部党员和入党积极分子参加。"},
   {index: "20191012_1616_0", title: "不忘初心学党史 牢记使命扬传统————银象传媒党支部开展10月主题党日活动", abstract: "为牢记党的光荣历史，继承发扬党的优良传统。根据“不忘初心、牢记使命”主题教育的工作安排与部署，10月…30余人前往中国共产党长沙历陈列馆参观学习，缅怀毛泽东、杨开慧等革命先辈，重温共产党员的初心使命。"},
@@ -140,7 +142,7 @@ export default class Product extends Component {
         </div>
         <div className={styles.productContainer}>
           <div>
-            <h3 className={styles.ProductsCore}>优秀案例</h3>
+            <h3 className={styles.ProductsCore}>项目案例</h3>
             <p className={styles.ProductsCoreIntro}>精心打造各种品牌活动，为客户提供对外展示的窗口</p> 
             <Row>
               {
@@ -163,9 +165,9 @@ export default class Product extends Component {
           <div className={styles.News}>
           <Row type='flex'>
             <Col xs={24} sm={24} md={12} lg={12}>
-            <Link to='./companyNews'>
+            <Link to={`./companyNewsDetail?title=${NewsList[0].index}`} target='_blank'>
               <div className={styles.NewsLeft}>
-                <img src={NewsCover} alt=''/>
+                <img src={NewsList[0].img} alt=''/>
                 <p>{NewsList[0].title}</p>
               </div>
             </Link>

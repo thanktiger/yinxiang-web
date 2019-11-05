@@ -66,7 +66,7 @@ export default class Product extends Component {
     return (
       <div>
         <div className={styles.productListCover}>
-          <h2>优秀案例</h2>
+          <h2>项目案例</h2>
           <p>精心打造各种品牌活动，为客户提供对外展示的窗口</p>
         </div>
         <div className={styles.productContainer}>
@@ -76,9 +76,13 @@ export default class Product extends Component {
               productListItem.map((item, index) => {
                 return (
                   <Col xs={24} sm={24} md={12} lg={12} key={index}>
-                    <Link to={`./productDetail?title=${item.index}`} target='_blank' className={styles.productListItem}>
-                      <img src={item.avatar} alt='' />
-                      <span>{item.title}</span>
+                    <Link
+                      to={`./productDetail?title=${item.index}`}
+                      target='_blank'
+                      className={styles.productListItem}>
+                        <div className={styles.productListItemShadow} />
+                        <img src={item.avatar} alt='' />
+                        <span>{item.title}</span>
                     </Link>
                   </Col>
                 )

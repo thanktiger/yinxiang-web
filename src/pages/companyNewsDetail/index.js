@@ -51,7 +51,7 @@ export default class CompanyNewsDetail extends Component {
   }
 
   render () {
-    let { cover, title, tag, date, content } = this.state
+    let { title, tag, date, content } = this.state
     return (
       <div className={styles.newsDetail}>
         <div className={styles.newsDetailHeader}>
