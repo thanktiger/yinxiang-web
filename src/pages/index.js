@@ -71,12 +71,12 @@ const BusinessItem = [
 ]
 
 const NewsList = [
-  {index: "20191025_1613_0", title: "银象传媒党支部开展“不忘初心、牢记使命”主题教育心得交流座谈会", img: firstDataCover},
+  {index: "20191105_1038_0", title: "百里毅行做服务，志愿禁毒普知识——银象传媒支部开展百公里毅行志愿服务普及禁毒知识", img: firstDataCover},
+  {index: "20191030_1716_0", title: "银象传媒支部参加集团领导专题辅导党课并召开对照检查专题会议", abstract: "为进一步提升党员的党性意识、责任意识、担当意识和大局意识，激发党员有效发挥先锋模范作用。10月29日上午，长沙城发集团副总经理、先导控股集团党委委员、常务副总经理危建新同志以《守纪律"},
+  {index: "20191025_1613_0", title: "银象传媒党支部开展“不忘初心、牢记使命”主题教育心得交流座谈会", abstract: "根据支部“不忘初心、牢记使命”主题教育工作部署安排，10月24日下午，银象传媒党支部在公司919会议…一步规范党员徽章管理的工作提示》，会议由组织委员陈文同志主持，支部党员和入党积极分子参加了座谈会。"},
   {index: "20191017_1547_0", title: "银象传媒支部开展支部书记讲专题党课活动", abstract: "根据“三会一课”制度和 “不忘初心、牢记使命”主题教育工作部署，10月17日上午，银象传媒支部在公司…支部书记讲专题党课活动，并组织观看了《初心与使命》廉政警示教育片，支部全体党员和入党积极分子参加。"},
+  {index: "20191015_1722_0", title: "2019中国（长沙）装配式建筑与工程技术博览会隆重启幕", abstract: "2019年10月15日，由银象传媒公司承接部分展位制作的2019年湖南（长沙）装配式建筑与工程技术博览会在长沙国际会展中心隆重开幕。"},
   {index: "20191012_1639_0", title: "银象传媒支部开展“不忘初心、牢记使命”主题教育集中学习杜家豪书记专题党课相关精神", abstract: "根据市委主题办的通知和集团党委要求，10月12日上午，银象传媒支部在公司919会议室集中学习了省委书…重自觉的共产党员》专题党课的相关精神。本次活动由支部书记肖宇同志主持，支部党员和入党积极分子参加。"},
-  {index: "20191012_1616_0", title: "不忘初心学党史 牢记使命扬传统————银象传媒党支部开展10月主题党日活动", abstract: "为牢记党的光荣历史，继承发扬党的优良传统。根据“不忘初心、牢记使命”主题教育的工作安排与部署，10月…30余人前往中国共产党长沙历陈列馆参观学习，缅怀毛泽东、杨开慧等革命先辈，重温共产党员的初心使命。"},
-  {index: "20190911_1514_0", title: "加强思想教育 引领党性升华————先导银象传媒党支部组织开展第三季度集中学习", abstract: "按照集团党委的统一部署，9月10日下午，先导银象传媒支部在公司919会议室开展第三季度集中学习，本次活动由支部书记肖宇同志主持，支部全体党员参加。"},
-  {index: "20190830_1901_0", title: "以制为尺、规范管理————银象传媒公司开展招采合约类制度培训", abstract: "为切实落实市委巡察组和集团巡察整改办的工作要求，严格规范内部管理流程，8月30日上午，银象传媒公司组织了招采合约相关制度培训。此次培训由副总经理陈文主持，全体员工参加。"}
 ]
 
 export default class Product extends Component {
@@ -150,6 +150,7 @@ export default class Product extends Component {
                   return (
                     <Col xs={24} sm={24} md={12} lg={12} key={index}>
                       <Link to={`./productDetail?title=${item.index}`} target='_blank' className={styles.productListItem}>
+                        <div className={styles.productListItemShadow} />
                         <img src={item.avatar} alt='' />
                         <span>{item.title}</span>
                       </Link>
@@ -160,7 +161,7 @@ export default class Product extends Component {
             </Row>
             <Link className={styles.moreBtn} to='./productList'>查看更多案例</Link>
           </div>
-          <h3 className={styles.ProductsCore}>公司动态</h3>
+          <h3 className={styles.ProductsCore}>新闻动态</h3>
           <p className={styles.ProductsCoreIntro}>公司与集团动态，与集团发展共成长</p> 
           <div className={styles.News}>
           <Row type='flex'>
