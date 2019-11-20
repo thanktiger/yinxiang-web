@@ -106,9 +106,6 @@ export default class Product extends Component {
       <div className={styles.homeContainer}>
         <Carousel autoplay={false}>
           <Link to={'#'}><img src={productListCover} alt='' style={{ width: '100%' }} /></Link>
-          <Link to={'#'}><img src={productListCover} alt='' style={{ width: '100%' }} /></Link>
-          <Link to={'#'}><img src={productListCover} alt='' style={{ width: '100%' }} /></Link>
-          <Link to={'#'}><img src={productListCover} alt='' style={{ width: '100%' }} /></Link>
         </Carousel>
         <div className={styles.ProductsCoreBg}>
           <div className={styles.productContainer}>
