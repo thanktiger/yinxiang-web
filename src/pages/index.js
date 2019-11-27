@@ -3,6 +3,8 @@ import { Row, Col, Carousel } from 'antd'
 import Link from 'umi/link';
 import styles from './index.less'
 
+import banner_img_01 from '../assets/banner_img_01.jpg'
+import banner_img_02 from '../assets/banner_img_02.jpg'
 import productListCover from '../assets/about_cover.png'
 import productCover1 from '../assets/productListItem1.png'
 import productCover2 from '../assets/productListItem2.png'
@@ -18,7 +20,7 @@ import businessActiveCover2 from '../assets/icon-index-02-dark.png'
 import businessActiveCover3 from '../assets/icon-index-03-dark.png'
 import businessActiveCover4 from '../assets/icon-index-04-dark.png'
 
-import firstDataCover from '../../public/json/img/20191025_1613_0_01.jpg'
+import firstDataCover from '../../public/json/img/20191105_1038_0_01.jpg'
 
 const productListItem = [
   {
@@ -104,8 +106,10 @@ export default class Product extends Component {
     let { current } = this.state
     return (
       <div className={styles.homeContainer}>
-        <Carousel autoplay={false}>
+        <Carousel autoplay>
           <Link to={'#'}><img src={productListCover} alt='' style={{ width: '100%' }} /></Link>
+          <Link to={'#'}><img src={banner_img_01} alt='' style={{ width: '100%' }} /></Link>
+          <Link to={'#'}><img src={banner_img_02} alt='' style={{ width: '100%' }} /></Link>
         </Carousel>
         <div className={styles.ProductsCoreBg}>
           <div className={styles.productContainer}>
