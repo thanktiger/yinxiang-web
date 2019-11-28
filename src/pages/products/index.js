@@ -9,7 +9,7 @@ import ProductsBoxIcon4 from '../../assets/icon-index-04-dark.png'
 import ProductsCorePic01 from '../../assets/productsPic01.png'
 import ProductsCorePic02 from '../../assets/productsPic02.png'
 import ProductsCorePic03 from '../../assets/productsPic03.png'
-import ProductsCorePic05 from '../../assets/productsPic05.png'
+import ProductsCorePic04 from '../../assets/productsPic04.png'
 import ProductsServicePic from '../../assets/ProductsService.png'
 
 const ProductsBox = [
@@ -48,7 +48,7 @@ const ProductsPlanItem = [
     intro: '为客户提供整体营销策略，线上广告创意策略、创意设计到广告投放策略、投放优化、效果分析等的新媒体全案服务。'
   },
   {
-    pic: ProductsCorePic05,
+    pic: ProductsCorePic04,
     title: '广告制作工程',
     intro: '为客户提供企业广告、商业导视、门店招牌、灯箱发光字、围挡广告位、道旗桁架、亮化工程等报批、设计、制作、安装、售后等为一体的综合服务。'
   }
