@@ -25,6 +25,18 @@ export default class Product extends Component {
               `
             }} />
             <p className={styles.activity}>党建活动</p>
+            <Link className={styles.activity_list} to={`./companyNewsDetail?title=20200312_1210`} target='_blank'>
+              <p>植种希望 祈福中国——先导城投支部、银象传媒支部联合白鹭府社区开展党建共建植树活动</p>
+            </Link>
+            <Link className={styles.activity_list} to={`./companyNewsDetail?title=20200228_1354`} target='_blank'>
+              <p>疫情防控不放松 规范要求抓落实——银象传媒支部召开党员大会传达重要文件精神</p>
+            </Link>
+            <Link className={styles.activity_list} to={`./companyNewsDetail?title=20191211_1405`} target='_blank'>
+              <p>银象传媒支部召开2019年度专题组织生活会暨民主评议党员大会</p>
+            </Link>
+            <Link className={styles.activity_list} to={`./companyNewsDetail?title=20191211_1005`} target='_blank'>
+              <p>银象传媒支部12月主题党日观影“不忘初心、牢记使命”主题教育院线电影——《小巷管家》</p>
+            </Link>
             <Link className={styles.activity_list} to={`./companyNewsDetail?title=20191105_1038_0`} target='_blank'>
               <p>百里毅行做服务，志愿禁毒普知识——银象传媒支部开展百公里毅行志愿服务普及禁毒知识</p>
             </Link>
